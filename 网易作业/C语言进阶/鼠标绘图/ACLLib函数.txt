@@ -1,0 +1,69 @@
+void initWindow(const char title[],int left,int top,int width,intheight);//定义一个窗口
+int Setup()//函数入口
+DEFAULT//windows觉得合适的数字
+如果需要使用scanf printf需要首先使用:
+initConsole();
+void beginPaint();//绘图函数开始
+void endPaint();//绘图函数结束
+
+void putPixel(intx,int y,ACL_Color color);//画点
+ACL_Color color:RGB(r,g,b)
+预先定义好的颜色：BLACK RED BLUE CYAN MAGENTA YELLOW WHITE GREEN
+ACL_Color getPixel(intx,int y);
+
+画线：
+void moveTo(int x,int y);//移动坐标点到x,y
+void moveRel(int dx,int dy);
+void line(int x0,int y0,int x1,int y1);画线
+void lineTo(int x,int y);//从当前坐标点画到x,y
+void lineRel(int dx,int dy);
+void arc(int nLeftRect,int nTopRect,int nRightRect,int nBottomRect,int nXStartArc,int nYStarArc,int nXEndArc,int nYEndArc);//画弧
+
+画笔：
+void setPenColor(ACL_Color color);//设置画笔颜色
+void setPenWidth(int width);//设置画笔宽度
+void setPenStyle(ACL_Pen_Style style);//设置画线类型
+PEN_STYLE_SOLID,//实线
+PEN_STYLE_DASH,//------
+PEN_STYLE_DOT,//......
+PEN_STYLE_DASHDOT,//_._._._._
+PEN_STYLE_DASHDOTDOT,//_.._.._.._
+PEN_STYLE_NULL//一条看不见的线
+
+面：
+void chrod(int,int,int,int,int,int,int,int);//扇形
+void ellipse(int,int,int,int);//椭圆
+void pie(int,int,int,int,int,int,int,int,int);//饼
+void rectangle(int,int,int,int);//矩形
+void roundrect(int,int,int,int,int,int);//圆角矩形
+
+刷子：
+画笔负责线及面，刷子负责面的内部
+void setBrushColor(ACL_Color color);
+void setBrushStyle(ACL_Brush_Style style);
+BRUSH_STYLE_SOLID=-1,
+BRUSH_STYLE_HORIZONTAL,//-------
+BRUSH_STYLE_VERTICAL,//|||||||
+BRUSH_STYLE_FDIAGONAL,//\\\\\\
+BRUSH_STYLE_BDIAGONAL,////////
+BRUSH_STYLE_CROSS,//+++++++
+BRUSH_STYLE_DIAGCROSS,//xxxxxx
+
+文字：
+void setTextColor(ACL_Color color);//文字颜色
+void setTextBkColor(ACL_Color color);//文字背景颜色
+void setTextSize(int size);//文字尺寸
+void setTextFont(char*pFontName);//字体
+
+void paintText(int x,int y,const char *pStr);
+
+动态：
+输出：
+intiConsole();//出现终端
+
+
+The Callbacks:
+typedef void(*KeyboardEventCallback)(const const char key);//键盘
+typedef void(*CharEventCallback)(int key);//字符
+typedef void(*MouseEventCallback)(int x,int y,int button,int status);//鼠标
+typedef void(*TimerEventCallback）(int timerID);//定时器
