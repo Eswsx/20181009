@@ -39,13 +39,6 @@ void main(){
 	while(1){
 
 			 DigDisplay();
- 	   
-
-
-
-	   
-	     
-
-	
 	}
+	return 0; 
 }
