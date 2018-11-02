@@ -1,7 +1,7 @@
 #include"radius.h"
 #include"define.h"
 #include<iostream>
-//***********************************//
+//*************class Circle****************//
 double Circle::getRadius() {
 	return radius_;
 }
@@ -22,7 +22,13 @@ double Circle::getArea() {
 
 }
 
-//*********************************************//
+//***************class Time*********************//
+Time::Time(int hour, int minute, int second) {};
+//***************class Action*******************//
+Action::Action(int hour, int minute, int second) :time(hour, minute, second) {
+	time = Time(hour, minute, second);
+}
+//**********************************************//
 
 void printCircle1(Circle c) {
 	std::cout << "The radius of the circle is "
@@ -90,7 +96,13 @@ void printCreateAnArrayOfObjects(){
 
 }
 
-/*	
+void printConstrutorInitializer() {
+
+}
+
+
+
+/**************************************************
 	创建对象调用构造函数：有参,无参
 	公共属性：public 
 	私有属性：private
@@ -100,10 +112,10 @@ void printCreateAnArrayOfObjects(){
 	在堆中创建对象：Circle* pCilcle = new Circle( );
 	                delete pCircle;
 	数据域与函数可按任意顺序声明
-	特殊的内建指针 this
+	特殊的内建指针 this->
+	若类的数据域是一个对象类型则需要初始化列表
+	不可变类与不可变对象：没有get set函数，数据域为私有
 
 
 
-
-
-*/
+*****************************************************/
