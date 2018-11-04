@@ -31,8 +31,15 @@ class Action {
 };
 
 class Date {
+public:
 	friend void p();
 	friend class AccessDate;
+
+	Date(int newYear,int nemMonth,int newDay);
+	Date();
+
+	int getYear();
+	void setYear(int newYear);
 private:
 	int year;
 	int month;
@@ -44,6 +51,16 @@ public:
 	static void q();
 };
 
+class Person {
+public:
+	Person(int id, int year, int month, int day);
+	int getId();
+	Date* getBirthDay();
+private:
+	int id_;
+	Date* birthDate;
+};
+
 void p();
 
 void printCircle1(Circle c);
@@ -53,6 +70,10 @@ void printCircle3(Circle* c);
 void setCircleArray(Circle* a, int size,double radius);
 void printCircleArray(Circle* a, int size);
 double getTotalArea(Circle* a, int size);
+
+void  disPlayPerson(Person& person1, Person& person2);
+
+void systemClear();
 
 void printFunctionCall();
 void printCreateAnArrayOfObjects();

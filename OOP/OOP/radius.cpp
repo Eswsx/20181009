@@ -1,6 +1,7 @@
 #include"radius.h"
 #include"define.h"
 #include<iostream>
+#include <Windows.h>
 //*************class Circle****************//
 int Circle::numberOfObjects = 1;//静态成员初始化的唯一方式，只能放在所有函数外进行初始化 //一应为零
 
@@ -25,7 +26,6 @@ Circle::Circle(double newRadius) {
 	radius_ = newRadius;
 	numberOfObjects++;
 }
-
 
 Circle::~Circle() {
 	numberOfObjects--;
@@ -53,6 +53,37 @@ Action::Action(int hour, int minute, int second) :time(hour, minute, second) {
 	 birthDate.year = 2000;
 	 std::cout << birthDate.year;
 }
+//****************class Date **********************//
+ Date::Date(int newYear, int newMonth, int newDay) {
+	 year = newYear;
+	 month = newMonth;
+	 day = newDay;
+ }
+
+ Date::Date() {
+ }
+
+ int Date::getYear() {
+	 return year;
+ }
+
+ void Date::setYear(int newYear) {
+	 year = newYear;
+ }
+
+//****************class Person*********************//
+ Person::Person(int id, int year, int month, int day) {
+	 id_ = id;
+	 birthDate = new Date(year, month, day);
+ }
+
+ int Person::getId() {
+	 return id_;
+ }
+
+ Date* Person::getBirthDay() {
+	 return birthDate;
+ }
 //********************************************//
 void printCircle1(Circle c) {
 	std::cout << "The radius of the circle is "
@@ -184,10 +215,39 @@ void printFriendFunctionAndClasses() {
 	AccessDate::q();
 }
 
-void printCopyConstructor() {
-
+void  disPlayPerson(Person& person1, Person& person2) {
+	std::cout << "\tperson1 id: " << person1.getId() << std::endl;
+	std::cout << "\tperson1 birth year: "
+		<< person1.getBirthDay() -> getYear() << std::endl;
+	std::cout << "\tperson1 id: " << person2.getId() << std::endl;
+	std::cout << "\tperson1 birth year: "
+		<< person2.getBirthDay() -> getYear() << std::endl;
 }
 
+void printCopyConstructor() {
+	std::cout << std::endl;
+	Person person1(111, 1970, 5, 3);
+	Person person2(222, 2000, 11, 8);
+
+	std::cout << "After creating person1 and person2 " << std::endl;
+	disPlayPerson(person1, person2);
+
+	person1 = Person(person2);
+	
+	std::cout << "After creating person2 and person1 " << std::endl;
+	disPlayPerson(person1, person2);
+
+	person2.getBirthDay()->setYear(1963);
+	std::cout << "\nAfter modifying person2's birthDate" << std::endl;
+	disPlayPerson(person1, person2);
+
+	std::cout << "\n" << (person1.getBirthDay() == person2.getBirthDay()) << std::endl << std::endl ;
+}
+
+void systemClear() {
+	Sleep(CLEARTIME);
+	system("clear");
+}
 
 /**************************************************
 	创建对象调用构造函数：有参,无参
@@ -205,5 +265,7 @@ void printCopyConstructor() {
 	为私有，没有能够返回数据域对象的引用或指针的访问器
 	静态成员初始化的唯一方式，只能放在所有函数外进行初始化
 	析构函数不能有参数,只能定义一个
-
+	浅拷贝：拷贝指针，而非指针所指的内容
+	深拷贝：拷贝指针所指的内容
+	c++里类默认的访问属性是private
 *****************************************************/
