@@ -1,13 +1,17 @@
 #pragma once
+#include"GeometricObject.h"
 
-class Circle{
+class Circle:public GeometricObject{
 	public:
 		Circle();
 		Circle(double newRedius);
+		Circle(double radius, std::string color, bool filled);
 		~Circle();
 		double getArea();
 		double getRadius();
 		void setRadius(double radius);
+		double getPerimeter();//圆的周长
+		double getDiameter();//圆的直径
 
 		static int getNumberOfObjects();
 
@@ -16,51 +20,7 @@ class Circle{
 		static int numberOfObjects;
 };
 
-class Time {
-	public:
-		Time(int hour, int minute, int second);
-	private:
-		int hour, minute, second;
-};
 
-class Action {
-	public:
-		Action(int hour, int minute, int second);
-	private:
-		Time time;
-};
-
-class Date {
-public:
-	friend void p();
-	friend class AccessDate;
-
-	Date(int newYear,int nemMonth,int newDay);
-	Date();
-
-	int getYear();
-	void setYear(int newYear);
-private:
-	int year;
-	int month;
-	int day;
-};
-
-class AccessDate {
-public:
-	static void q();
-};
-
-class Person {
-public:
-	Person(int id, int year, int month, int day);
-	Person(Person &);
-	int getId();
-	Date* getBirthDay();
-private:
-	int id_;
-	Date* birthDate;
-};
 
 void p();
 
@@ -71,16 +31,3 @@ void printCircle3(Circle* c);
 void setCircleArray(Circle* a, int size,double radius);
 void printCircleArray(Circle* a, int size);
 double getTotalArea(Circle* a, int size);
-
-void  disPlayPerson(Person& person1, Person& person2);
-
-void systemClear();
-
-void printFunctionCall();
-void printCreateAnArrayOfObjects();
-void printConstrutorInitializer();
-void printStaticFunction();
-void printDestructors();
-void printFriendFunctionAndClasses();
-void printCopyConstructor();
-void printCustomingCopyConstructor();

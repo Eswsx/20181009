@@ -21,12 +21,36 @@
     <ClInclude Include="define.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GeometricObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Allprint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Other.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="radius.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometricObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Other.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Allprint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="time.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
