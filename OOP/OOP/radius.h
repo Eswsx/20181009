@@ -54,6 +54,7 @@ public:
 class Person {
 public:
 	Person(int id, int year, int month, int day);
+	Person(Person &);
 	int getId();
 	Date* getBirthDay();
 private:
@@ -82,3 +83,4 @@ void printStaticFunction();
 void printDestructors();
 void printFriendFunctionAndClasses();
 void printCopyConstructor();
+void printCustomingCopyConstructor();

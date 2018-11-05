@@ -77,6 +77,12 @@ Action::Action(int hour, int minute, int second) :time(hour, minute, second) {
 	 birthDate = new Date(year, month, day);
  }
 
+ Person::Person(Person& person) {
+	 id_ = person.id_;
+	 Date* p = person.getBirthDay();
+	 birthDate = new Date(*p);
+ }
+
  int Person::getId() {
 	 return id_;
  }
@@ -247,6 +253,28 @@ void printCopyConstructor() {
 void systemClear() {
 	Sleep(CLEARTIME);
 	system("clear");
+}
+
+void printCustomingCopyConstructor() {
+	Person person1(111, 1970, 5, 3);
+	Person person2(person1);
+
+	std::cout << "After creating person1 and person2 " << std::endl;
+	disPlayPerson(person1, person2);
+
+	person2.getBirthDay()->setYear(1963);
+
+	std::cout << "\nAfter modifying person2's birthDate" << std::endl;
+	disPlayPerson(person1, person2);
+
+	std::cout << "\n\nperson1.birthDate == person2.birthDate: " 
+		<< (person1.getBirthDay() == person2.getBirthDay()) << std::endl << std::endl;
+
+	Person person3(111, 1970, 5, 3);
+	Person person4 = person3;
+	std::cout << "Person3.birthDate = " << reinterpret_cast<int>(person3.getBirthDay()) << std::endl;
+	std::cout << "Person4.birthDate = " << reinterpret_cast<int>(person4.getBirthDay()) << std::endl;
+	//reinterpret_cast<int>C++保留关键字，强制类型转换，将地址强制转化为整型
 }
 
 /**************************************************
