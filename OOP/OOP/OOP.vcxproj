@@ -156,6 +156,7 @@
     <ClInclude Include="GeometricObject.h" />
     <ClInclude Include="Other.h" />
     <ClInclude Include="radius.h" />
+    <ClInclude Include="rectangle.h" />
     <ClInclude Include="time.h" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +173,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="radius.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="rectangle.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="time.cpp">
