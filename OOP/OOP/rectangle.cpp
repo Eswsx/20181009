@@ -7,6 +7,12 @@ Rectangle::Rectangle(double width, double height) {
 	width_ = width;
 	height_ = height;
 }
+Rectangle::Rectangle(double width, double height,string color,bool filled) {
+	width_ = width;
+	height_ = height;
+	
+}
+
 double Rectangle::getWidth() {
 	return width_;
 }

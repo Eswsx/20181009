@@ -1,5 +1,6 @@
 #pragma once
 #include"GeometricObject.h"
+#include<iostream>
 
 class Circle:public GeometricObject{
 	public:
@@ -12,6 +13,7 @@ class Circle:public GeometricObject{
 		void setRadius(double radius);
 		double getPerimeter();//圆的周长
 		double getDiameter();//圆的直径
+		
 
 		static int getNumberOfObjects();
 
