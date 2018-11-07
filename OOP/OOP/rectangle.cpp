@@ -10,7 +10,8 @@ Rectangle::Rectangle(double width, double height) {
 Rectangle::Rectangle(double width, double height,string color,bool filled) {
 	width_ = width;
 	height_ = height;
-	
+	GeometricObject::setColor(color);
+	GeometricObject::setFilled(filled);
 }
 
 double Rectangle::getWidth() {

@@ -10,3 +10,4 @@ void printCustomingCopyConstructor();
 void printVectorClass();
 
 void printInheritance();
+void test();
