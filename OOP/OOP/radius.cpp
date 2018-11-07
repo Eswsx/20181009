@@ -29,8 +29,8 @@ Circle::Circle(double newRadius) {
 Circle::Circle(double radius, string color, bool filled) {
 	radius_ = radius;
 	numberOfObjects++;
-	GeometricObject::setColor(color);
-	GeometricObject::setFilled(filled);
+	setColor(color);
+	setFilled(filled);
 }
 
 Circle::~Circle() {

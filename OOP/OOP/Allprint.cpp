@@ -197,7 +197,4 @@ void test() {
 		<< "  area: " << a.getArea()
 		<< "  perimeter: " << a.getPerimeter()
 		<< "\n" << endl;
-	//GeometricObject::setColor(color);
-	//GeometricObject::setFilled(filled);
-	//子函数调用父函数中的函数调用方法
 }
