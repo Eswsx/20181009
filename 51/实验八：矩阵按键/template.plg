@@ -1,0 +1,49 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Es无语中\Documents\Github2\51\实验八：矩阵按键\template.uvproj
+Project File Date:  09/30/2018
+
+<h2>Output:</h2>
+compiling main.c...
+MAIN.C(24): error C202: 'p1': undefined identifier
+MAIN.C(25): error C202: 'p1': undefined identifier
+MAIN.C(27): error C202: 'p1': undefined identifier
+MAIN.C(28): error C202: 'p1': undefined identifier
+MAIN.C(29): error C202: 'p1': undefined identifier
+MAIN.C(35): error C202: 'p1': undefined identifier
+MAIN.C(36): error C202: 'p1': undefined identifier
+MAIN.C(42): error C202: 'p1': undefined identifier
+main.c - 8 Error(s), 0 Warning(s).
+compiling main.c...
+MAIN.C(57): warning C206: 'keyDown': missing function-prototype
+main.c - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(57): warning C206: 'keyDown': missing function-prototype
+linking...
+Program Size: data=11.0 xdata=0 code=191
+creating hex file from "template"...
+"template" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(57): warning C206: 'keyDown': missing function-prototype
+linking...
+Program Size: data=11.0 xdata=0 code=191
+creating hex file from "template"...
+"template" - 0 Error(s), 1 Warning(s).
+compiling main.c...
+MAIN.C(57): warning C206: 'keyDown': missing function-prototype
+main.c - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(57): warning C206: 'keyDown': missing function-prototype
+linking...
+Program Size: data=11.0 xdata=0 code=191
+creating hex file from "template"...
+"template" - 0 Error(s), 1 Warning(s).
+compiling main.c...
+MAIN.C(53): warning C206: 'keyDown': missing function-prototype
+main.c - 0 Error(s), 1 Warning(s).
